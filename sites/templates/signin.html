@@ -1,0 +1,30 @@
+{% extends 'layout.html' %}
+
+{% load crispy_forms_tags %}
+
+{% block content %}
+
+<!--{{ request.session.city }}-->
+{% if msg %}
+
+
+
+
+<div class="alert alert-success">
+  <strong>Success!</strong> {{ msg }}
+</div>
+
+
+
+{% endif %}
+
+ <form action ="" method ="POST" novalidate>{% csrf_token %}
+
+        {{ form | crispy }}
+
+
+        <input type = "submit" value =" Signin" >
+
+    </form>
+
+{% endblock %}

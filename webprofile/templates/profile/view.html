@@ -1,0 +1,10 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+
+<h3>{{ data.user }}</h3>
+<h3>{{ data.avatar }}</h3>
+
+<img style="border-radius: 247px;" src = "/{{ data.avatar }}" alt="wrong" width="300" height="300"/>
+
+{% endblock %}

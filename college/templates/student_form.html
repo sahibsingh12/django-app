@@ -1,0 +1,17 @@
+{% extends 'layout.html' %}
+
+{% block title %}Form example 2{% endblock %}
+
+{% load crispy_forms_tags %}
+
+{% block content %}
+
+<form action="" METHOD="POST" novalidate>{% csrf_token %}
+
+    {{ formvar | crispy }}
+
+    <input type="submit"  class="btn btn-success" value = "submit">
+
+</form>
+
+{% endblock %}

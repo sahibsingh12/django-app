@@ -1,0 +1,10 @@
+{% extends 'layout.html'%}
+{% block content %}
+<h2>This is my layout page </h2>
+{% if address == 'BTM' %}
+<h2>address is :{{ address }}</h2>
+{% else %}
+
+<h2> Address not found </h2>
+{% endif %}
+{% endblock %}

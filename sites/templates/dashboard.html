@@ -1,0 +1,21 @@
+{% extends 'layout.html' %}
+
+{% load crispy_forms_tags %}
+
+{% block content %}
+
+
+    {% if request.user.username %}
+     {{  request.session.city}}
+
+    <h3>Welcome: {{ request.user.username }}</h3>
+
+    <a href="/site/logout">Logout({{ request.user.username }})</a>
+
+    {% else %}
+    <a href ="/site/signin">Login</a>
+
+
+    {% endif %}
+
+{% endblock %}

@@ -1,0 +1,81 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+
+<a href ="{% url 'create'%}" class="'' btn btn-success btn-sm">Create</a></br></br>
+
+<table class="table table-bordered">
+    <thead>
+      <tr>
+        <th>Id</th>
+        <th>Name</th>
+        <th>Email</th>
+        <th>Address</th>
+        <th>Action</th>
+      </tr>
+    </thead>
+    <tbody>
+    {% for row in data %}
+      <tr>
+        <td>{{ row.id }}</td>
+        <td>{{ row.name }}</td>
+        <td>{{ row.email }}</td>
+        <td>{{ row.address }}</td>
+        <td>
+            <span><a href="{% url 'update' row.id %}" class ="btn btn-primary btn-sm">Update</a> </span>
+            <span><a href="{% url 'view' row.id %}" class="btn btn-info btn-sm">View</a> </span>
+            <span><a href="{% url 'delete' row.id %}" class="delete btn btn-warning btn-sm">Delete</a> </span>
+        </td>
+
+
+      </tr>
+    {% endfor %}
+
+    </tbody>
+  </table>
+
+  {% if data.has_other_pages %}
+  <ul class="pagination">
+    {% if data.has_previous %}
+      <li><a href="?page={{ data.previous_page_number }}">&laquo;</a></li>
+    {% else %}
+      <li class="disabled"><span>&laquo;</span></li>
+    {% endif %}
+    {% for i in data.paginator.page_range %}
+      {% if data.number == i %}
+        <li class="active"><span>{{ i }} <span class="sr-only">(current)</span></span></li>
+      {% else %}
+        <li><a href="?page={{ i }}">{{ i }}</a></li>
+      {% endif %}
+    {% endfor %}
+    {% if data.has_next %}
+      <li><a href="?page={{ data.next_page_number }}">&raquo;</a></li>
+    {% else %}
+      <li class="disabled"><span>&raquo;</span></li>
+    {% endif %}
+  </ul>
+{% endif %}
+</div>
+
+
+
+<script>
+    $(document).ready(function(){
+
+        $('.delete').click(function(){
+
+            if(confirm('are you sure to delete this item?')){
+
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+
+        });
+
+
+    });
+</script>
+{% endblock %}

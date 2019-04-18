@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+{% extends 'layout.html'%}
+{%block content%}
+<h2>i am creating a class</h2>
+{% for i in l1 %}
+<p>{{ i }}</p>
+
+{% endfor %}
+<h3>{{ name }}</h3>
+{% endblock %}

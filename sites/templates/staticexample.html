@@ -1,0 +1,40 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+
+{% load static %}
+
+<link href ="{% static 'css/new.css' %}" type="text/css" rel ="stylesheet">
+<script src ="{% static 'js/new.js' %}" type = "text/javascript"></script>
+
+<style>
+    .test{
+         color:red;
+    }
+</style>
+
+<!--<img src="{% static 'images/taylor-swift-2014-sarah-barlow-billboard-650.jpg' %}" width ="500" height="500" alt = "something went wrong with image">-->
+
+
+
+<!--<h2>i am in static example</h2>-->
+<!--<h2 style = "color:purple">inline css</h2>-->
+
+<!--<h2 class = "test">Internal css</h2>-->
+
+<!--<h2 class="demo"> External CSS </h2>-->
+
+<!--<button onclick="clickMe()" class = "btn btn-default">Click here.</button>-->
+
+<!--<button onmouseover="helloPython()" class="btn btn-default">Click here too....</button>-->
+
+<video width="320" height="240" controls>
+  <source src="{% static 'videos/Jaane Kyon Log Mohabbat - Mehboob Ki Mehndi.mp4' %}" type="video/mp4">
+  <!--delete this line &lt;!&ndash;<source src="movie.ogg" type="video/ogg">&ndash;&gt;-->
+Your browser does not support the video tag.
+</video>
+
+
+
+
+{% endblock %}
